@@ -17,7 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [self addShortcutItems];
+    NSLog(@"%@",[UIApplication sharedApplication].shortcutItems);
+    
+    //[self addShortcutItems];
+    
     
     return YES;
 }
@@ -26,7 +29,7 @@
 
     UIApplicationShortcutIcon *icon1 = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeCompose];
     
-    UIApplicationShortcutIcon *icon2 = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypePlay];
+    UIApplicationShortcutIcon *icon2 = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeShare];
     
     UIApplicationShortcutIcon *icon3 = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeAdd];
     
@@ -37,6 +40,7 @@
     UIMutableApplicationShortcutItem *item3 = [[UIMutableApplicationShortcutItem alloc] initWithType:@"com.test.dynamic" localizedTitle:@"item3" localizedSubtitle:@"item3sub" icon:icon3 userInfo:nil];
     
     NSArray *items = @[item1, item2, item3];
+    
     if ([UIApplication sharedApplication].shortcutItems.count == 0) {
         
         [UIApplication sharedApplication].shortcutItems = items;

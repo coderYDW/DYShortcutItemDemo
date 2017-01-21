@@ -56,7 +56,7 @@
     
     if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
         
-        [self registerForPreviewingWithDelegate:(id)self sourceView:self.view];
+        [self registerForPreviewingWithDelegate:(id)self sourceView:self.tableView];
         
     } else {
         
@@ -87,10 +87,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"shortcut"];
     }
     
-    cell.textLabel.text = @"title";
+    cell.textLabel.text = [NSString stringWithFormat:@"第%zd组,第%zd行",indexPath.section,indexPath.row];
     
-    cell.detailTextLabel.text = @"detail";
-    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
@@ -101,7 +100,7 @@
     
     NSLog(@"%s", __FUNCTION__);
     
-    location = [self.view convertPoint:location toView:self.tableView];
+    //location = [self.view convertPoint:location toView:self.tableView];
     
     NSLog(@"%@\n%@",previewingContext,NSStringFromCGPoint(location));
     
@@ -113,7 +112,7 @@
         
         CGRect selectedFrame = [self.tableView cellForRowAtIndexPath:indexPath].frame;
         
-        selectedFrame = [self.tableView convertRect:selectedFrame toView:self.view];
+        //selectedFrame = [self.tableView convertRect:selectedFrame toView:self.view];
         
         previewingContext.sourceRect = selectedFrame;
         
@@ -136,19 +135,7 @@
     
     [self showViewController:viewControllerToCommit sender:self];
     
-}
-    
-    
-- (UIView *)soureView {
-
-    if (_soureView == nil) {
-        
-        _soureView = [[UIView alloc] init];
-        
-        _soureView.backgroundColor = [UIColor blueColor];
-        
-    }
-    return _soureView;
+    NSLog(@"viewControllerToCommit = %@\npreviewingContext = %@", viewControllerToCommit, previewingContext);
     
 }
 

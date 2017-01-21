@@ -26,26 +26,6 @@
     
 }
 
-#pragma mark - UIViewControllerPreviewingDelegate
-    
-- (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
-    
-    NSLog(@"%s", __FUNCTION__);
-    
-    NSLog(@"%@\n%@",previewingContext,NSStringFromCGPoint(location));
-    
-    ViewController *preview = [[ViewController alloc] init];
-    
-    return preview;
-    
-}
-    
-- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
-    
-    NSLog(@"%s", __FUNCTION__);
-    
-}
-
 #pragma mark - 重写预览选项
 - (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
 
@@ -55,7 +35,19 @@
 
     }];
     
-    return @[action1];
+    UIPreviewAction *action2 = [UIPreviewAction actionWithTitle:@"Action 2" style:UIPreviewActionStyleSelected handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        
+        NSLog(@"Action 2 triggered");
+        
+    }];
+    
+    UIPreviewAction *action3 = [UIPreviewAction actionWithTitle:@"Action 3" style:UIPreviewActionStyleDestructive handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        
+        NSLog(@"Action 3 triggered");
+        
+    }];
+    
+    return @[action1, action2, action3];
     
 }
     
