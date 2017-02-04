@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, copy) void (^action1Block)(NSArray *items);
 
 @end
 

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "PreviewingViewController.h"
+#import "DYPreviewingViewController.h"
 
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource,UIViewControllerPreviewingDelegate>
     
@@ -33,13 +33,13 @@
     
     [self addTableView];
     
-    [self addShortcut];
+    [self addPreview];
     
 }
     
 - (void)addTableView {
     
-    self.tableView = [[UITableView alloc] init];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     
     self.tableView.delegate = self;
     
@@ -51,7 +51,7 @@
     
 }
     
-- (void)addShortcut {
+- (void)addPreview {
     
     
     if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
@@ -67,19 +67,19 @@
 }
     
 #pragma mark - tableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
+    return 2;
+    
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return 5;
     
 }
-    
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return 1;
-    
-}
-    
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"shortcut"];
@@ -92,6 +92,11 @@
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+
 }
     
 #pragma mark - UIViewControllerPreviewingDelegate
@@ -123,7 +128,9 @@
         
     }
     
-    PreviewingViewController *preview = [[PreviewingViewController alloc] init];
+    DYPreviewingViewController *preview = [[DYPreviewingViewController alloc] init];
+    
+    preview.viewController = self;
     
     return preview;
     

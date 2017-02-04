@@ -7,7 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "ViewController.h"
 
-@interface PreviewingViewController : UIViewController
+@interface DYPreviewingViewController : UIViewController
+
+@property (nonatomic, strong) ViewController *viewController;
 
 @end

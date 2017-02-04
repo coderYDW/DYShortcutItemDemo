@@ -6,14 +6,16 @@
 //  Copyright © 2017年 DovYoung. All rights reserved.
 //
 
-#import "PreviewingViewController.h"
+#import "DYPreviewingViewController.h"
 #import "ViewController.h"
 
-@interface PreviewingViewController () <UIViewControllerPreviewingDelegate>
+@interface DYPreviewingViewController ()
+
+@property (nonatomic, strong) NSMutableArray *items;
 
 @end
 
-@implementation PreviewingViewController
+@implementation DYPreviewingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,7 +34,9 @@
     UIPreviewAction *action1 = [UIPreviewAction actionWithTitle:@"Action 1" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
 
         NSLog(@"Action 1 triggered");
-
+        
+        
+        
     }];
     
     UIPreviewAction *action2 = [UIPreviewAction actionWithTitle:@"Action 2" style:UIPreviewActionStyleSelected handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
@@ -47,8 +51,21 @@
         
     }];
     
-    return @[action1, action2, action3];
+    if (self.items.count == 0) {
+        
+        self.items = [NSMutableArray arrayWithObjects: action1,action2,action3,nil];
+        
+    }
     
+    return self.items;
+    
+}
+
+- (NSMutableArray *)items {
+    if (_items == nil) {
+        _items = [[NSMutableArray alloc] init];
+    }
+    return _items;
 }
     
 @end
