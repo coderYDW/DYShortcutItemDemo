@@ -35,8 +35,6 @@
 
         NSLog(@"Action 1 triggered");
         
-        
-        
     }];
     
     UIPreviewAction *action2 = [UIPreviewAction actionWithTitle:@"Action 2" style:UIPreviewActionStyleSelected handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
