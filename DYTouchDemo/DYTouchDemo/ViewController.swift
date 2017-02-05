@@ -8,35 +8,45 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let tableView = UITableView()
-    
+    let tableView = UITableView.init(frame: CGRect.init(), style: .grouped)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        print(tableView)
+        
+        self.view.backgroundColor = UIColor.red
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        self.view.addSubview(tableView)
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidLayoutSubviews() {
+        
+        tableView.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
+        
     }
-
-    // MARK: TableView Delegate
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
+    // MARK: - TableView DataSource
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
         return 3
         
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
-        return 1
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+        return 5
         
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "cellIdentifier"
         
@@ -48,12 +58,29 @@ class ViewController: UIViewController, UITableViewDelegate {
             
         }
         
-        cell?.textLabel?.text = "hello"
+        cell?.textLabel?.text = "hello swift"
+        
+        cell?.textLabel?.textColor = UIColor.black
         
         return cell!
         
     }
     
+    // MARK: - TableView Delegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print(indexPath)
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 80.00
+        
+    }
 
+    
+    
 }
 

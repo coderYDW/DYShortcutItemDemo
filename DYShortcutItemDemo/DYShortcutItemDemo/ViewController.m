@@ -53,7 +53,7 @@
     
 - (void)addPreview {
     
-    
+    //判断是否支持3D-Touch
     if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
         
         [self registerForPreviewingWithDelegate:(id)self sourceView:self.tableView];

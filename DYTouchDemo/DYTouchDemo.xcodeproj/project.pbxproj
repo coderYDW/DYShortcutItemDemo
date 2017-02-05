@@ -415,6 +415,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QB999MQXK9;
 				INFOPLIST_FILE = DYTouchDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kingve.dov.DYTouchDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -428,6 +429,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QB999MQXK9;
 				INFOPLIST_FILE = DYTouchDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kingve.dov.DYTouchDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -508,6 +510,7 @@
 				96193AD51E45E67E0073B31A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96193AD61E45E67E0073B31A /* Build configuration list for PBXNativeTarget "DYTouchDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +519,7 @@
 				96193AD81E45E67E0073B31A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96193AD91E45E67E0073B31A /* Build configuration list for PBXNativeTarget "DYTouchDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +528,7 @@
 				96193ADB1E45E67E0073B31A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
