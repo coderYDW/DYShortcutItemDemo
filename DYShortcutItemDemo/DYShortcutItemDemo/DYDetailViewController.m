@@ -29,7 +29,11 @@
     
     NSLog(@"force = %.2f, maximumPossibleForce = %.2f",touch.force, touch.maximumPossibleForce);
     
-    self.view.backgroundColor = [UIColor colorWithWhite: 1 - touch.force/touch.maximumPossibleForce alpha:1];
+    CGFloat color = 1 - touch.force/touch.maximumPossibleForce;
+    
+    //self.view.backgroundColor = [UIColor colorWithWhite: 1 - touch.force/touch.maximumPossibleForce alpha:1];
+    
+    self.view.backgroundColor = [UIColor colorWithRed:1 green:color blue:color alpha:1];
 
 }
 
