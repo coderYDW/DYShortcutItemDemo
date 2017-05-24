@@ -8,12 +8,11 @@
 
 #import "ViewController.h"
 #import "DYPreviewingViewController.h"
+#import "DYDetailViewController.h"
 
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource,UIViewControllerPreviewingDelegate>
     
 @property (nonatomic, strong) UITableView *tableView;
-
-@property (nonatomic, strong) UIView *soureView;
     
 @end
 
@@ -95,7 +94,9 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    DYDetailViewController *detailVC = [DYDetailViewController new];
     
+    [self.navigationController pushViewController:detailVC animated:YES];
 
 }
     

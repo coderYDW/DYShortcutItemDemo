@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18C98A631ED5AEA100733E40 /* DYDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C98A621ED5AEA100733E40 /* DYDetailViewController.m */; };
 		96A4E3C21E31EAAC00622F59 /* DYPreviewingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A4E3C11E31EAAC00622F59 /* DYPreviewingViewController.m */; };
 		96AB51AA1E30C2610079A993 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AB51A91E30C2610079A993 /* main.m */; };
 		96AB51AD1E30C2610079A993 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96AB51AC1E30C2610079A993 /* AppDelegate.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18C98A611ED5AEA100733E40 /* DYDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYDetailViewController.h; sourceTree = "<group>"; };
+		18C98A621ED5AEA100733E40 /* DYDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYDetailViewController.m; sourceTree = "<group>"; };
 		96A4E3C01E31EAAC00622F59 /* DYPreviewingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYPreviewingViewController.h; sourceTree = "<group>"; };
 		96A4E3C11E31EAAC00622F59 /* DYPreviewingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYPreviewingViewController.m; sourceTree = "<group>"; };
 		96AB51A51E30C2610079A993 /* DYShortcutItemDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYShortcutItemDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +118,8 @@
 				96AB51A81E30C2610079A993 /* Supporting Files */,
 				96A4E3C01E31EAAC00622F59 /* DYPreviewingViewController.h */,
 				96A4E3C11E31EAAC00622F59 /* DYPreviewingViewController.m */,
+				18C98A611ED5AEA100733E40 /* DYDetailViewController.h */,
+				18C98A621ED5AEA100733E40 /* DYDetailViewController.m */,
 			);
 			path = DYShortcutItemDemo;
 			sourceTree = "<group>";
@@ -212,7 +217,7 @@
 				TargetAttributes = {
 					96AB51A41E30C2610079A993 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = QB999MQXK9;
+						DevelopmentTeam = SFE773JE3C;
 						ProvisioningStyle = Automatic;
 					};
 					96AB51BD1E30C2610079A993 = {
@@ -283,6 +288,7 @@
 				96AB51B01E30C2610079A993 /* ViewController.m in Sources */,
 				96AB51AD1E30C2610079A993 /* AppDelegate.m in Sources */,
 				96AB51AA1E30C2610079A993 /* main.m in Sources */,
+				18C98A631ED5AEA100733E40 /* DYDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,7 +437,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QB999MQXK9;
+				DEVELOPMENT_TEAM = SFE773JE3C;
 				INFOPLIST_FILE = DYShortcutItemDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -444,7 +450,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QB999MQXK9;
+				DEVELOPMENT_TEAM = SFE773JE3C;
 				INFOPLIST_FILE = DYShortcutItemDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
